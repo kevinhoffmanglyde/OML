@@ -2,15 +2,11 @@ $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 code: model
 command: >-
   python train.py 
-name: oml-instance-i
-type: computeinstance
-size: STANDARD_DS3_v2
+name: oxfordML-Kevhoff-pipe
 inputs:
-training_data: 
-  type: uri_folder
-  path: ./experimentation/data/
-reg_rate: 0.01
+  training_data: 
+    type: uri_file
+    path: azureml:diabetes-dev:1
+  reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: 
 experiment_name: oml-experiment-1
-description: 
